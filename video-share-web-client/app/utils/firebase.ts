@@ -14,11 +14,7 @@ import {
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAqvzHnKyw94JO525cFWCjajjDB1I87cDE",
-  authDomain: "videoshare-24f39.firebaseapp.com",
-  projectId: "videoshare-24f39",
-  appId: "1:595404850711:web:c3b94d40cf6d6bc887fe52",
-  measurementId: "G-34TZ0FD32S"
+
 };
 
 // Initialize Firebase
