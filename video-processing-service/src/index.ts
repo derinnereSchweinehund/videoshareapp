@@ -42,6 +42,8 @@ app.post("/process-video", async (req, res) => {
         deleteRawVideo(inputFileName), 
         deleteProcessedVideo(outputFileName)
     ]); //repeated code, maybe structure this file better?
+
+    return res.status(200).send("Processing finished successfully");
 });
 
 const port = process.env.PORT || 3000;
