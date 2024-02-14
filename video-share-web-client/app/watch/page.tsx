@@ -3,14 +3,20 @@
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
-export default function Watch() {
-    const videoPrefix = "http://bankvideoshare-processed-videos.storage.googleapis.com/";
+function View() {
+    const videoPrefix = "https://bankvideoshare-processed-videos.storage.googleapis.com/";
     const videoSrc = useSearchParams().get("v");
+    return <video controls src={videoPrefix + videoSrc}/>
+}
+export default function Watch() {
+
     return (
         <div>
             <h1>Watch Page</h1>
             {/*<Suspense fallback={<h1>Loading Video</h1>}>*/}
-            {<video controls src={videoPrefix + videoSrc}/>}
+            <Suspense>
+                <View />
+            </Suspense>
             {/*</Suspense>*/}
         </div>
     )
