@@ -5,10 +5,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./navbar.module.css";
-import SignIn from "./sign-in"
+import SignIn from "./sign-in";
+import Upload from "./upload";
 import { onAuthStateChangedHelper } from "../utils/firebase";
-import { useEffect, useState } from "react";
-import { User } from "firebase/auth"
+import { Fragment, useEffect, useState } from "react";
+import { User } from "firebase/auth";
 
 export default function Navbar() {
     const [user, setUser] = useState<User | null>(null);
@@ -26,6 +27,11 @@ export default function Navbar() {
                 <Image width={500} height={100}
                     src="/logo.svg" alt="Website logo" />
             </Link>
+            {user ? (
+                    <Upload />
+            ) : (
+                    <h1> Please sign-in to post </h1> 
+                )} 
             <SignIn user={user} />
         </nav>
     )

@@ -1,4 +1,4 @@
-export default function Watch() {
+export default function helloWorld() {
     return (
         <div>
             <h1>easter</h1>
